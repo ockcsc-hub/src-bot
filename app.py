@@ -64,7 +64,14 @@ def webhook():
     except Exception as e:
         print(f"Error: {e}")
     return "OK", 200
+@app.route('/privacy-policy')
+def privacy_policy():
+    return "<h1>Privacy Policy - SRC Print Shop Bhubaneswar</h1><p>We respect privacy. We do not collect or store personal data. WhatsApp messages used only for print services. Contact gpjsrc@gmail.com to delete data. Deletion within 24 hours.</p>"
 
+@app.route('/data-deletion')
+def data_deletion():
+    return "<h1>Data Deletion - SRC</h1><p>Email gpjsrc@gmail.com to delete your data.</p>"
+    
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
